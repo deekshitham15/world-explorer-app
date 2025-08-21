@@ -18,18 +18,6 @@ A web application that serves as a dynamic country information browser. Users ca
 -   **Axios:** A promise-based HTTP client for making API requests to the REST Countries API.
 -   **CSS:** For styling and a responsive design.
 
-## Project Structure
-
-├── public/
-│   └── styles.css        # Custom styles for the application.
-├── views/
-│   ├── country-details.ejs # Template for displaying a single country's details.
-│   └── index.ejs           # The main homepage template.
-├── .gitignore              # Specifies files to ignore from Git.
-├── package.json            # Project dependencies and scripts.
-├── package-lock.json       # Manages dependency versions.
-└── index.js                # The main server file.
-
 ## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine.
@@ -44,7 +32,7 @@ You need to have **Node.js** and **npm** installed on your system.
     
 2.  **Install the dependencies:**
    
-    This command will install all the required packages listed in `package.json`.
+    All the required packages listed in `package.json`.
 
 ### Running the Application
 
