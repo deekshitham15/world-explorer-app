@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World Explorer</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>World Explorer 🌍</h1>
+        <form action="/search" method="GET" class="search-form">
+            <input type="text" name="name" placeholder="Search for a country..." required>
+            <button type="submit">Search</button>
+        </form>
+        
+        <% if (locals.error) { %>
+            <p class="error-message"><%= error %></p>
+        <% } else if (locals.countries) { %>
+            <div class="country-grid">
+                <% countries.forEach(country => { %>
+                    <div class="country-card">
+                        <a href="/country/<%= country.name.common %>">
+                            <img src="<%= country.flags.svg %>" alt="<%= country.name.common %> Flag">
+                            <div class="info">
+                                <h3><%= country.name.common %></h3>
+                                <p><strong>Population:</strong> <%= country.population.toLocaleString() %></p>
+                                <p><strong>Region:</strong> <%= country.region %></p>
+                                <p><strong>Capital:</strong> <%= country.capital %></p>
+                            </div>
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

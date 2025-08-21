@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= country.name.common %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">← Back to Home</a>
+        <div class="details-container">
+            <h2><%= country.name.common %></h2>
+            <img src="<%= country.flags.svg %>" alt="<%= country.name.common %> Flag" class="details-flag">
+            
+            <div class="info-text-container">
+                <p><strong>Official Name:</strong> <%= country.name.official %></p>
+                <p><strong>Region:</strong> <%= country.region %></p>
+                <p><strong>Subregion:</strong> <%= country.subregion %></p>
+                <p><strong>Capital:</strong> <%= country.capital.join(", ") %></p>
+                <p><strong>Population:</strong> <%= country.population.toLocaleString() %></p>
+                <p><strong>Languages:</strong> <%= Object.values(country.languages).join(", ") %></p>
+                <p><strong>Currency:</strong> <%= Object.values(country.currencies)[0].name %> (<%= Object.values(country.currencies)[0].symbol %>)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
